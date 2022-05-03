@@ -5,6 +5,7 @@ import { IProduct } from "./Product";
 @Component({
   selector: "pm-products",
   templateUrl: "./Products-List.component.html",
+  styleUrls: ["./Products-List.component.css"],
 })
 export class ProductListComponent {
   pageTitle: string = "Product List";
