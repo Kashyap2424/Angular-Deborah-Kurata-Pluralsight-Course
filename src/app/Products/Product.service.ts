@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { IProduct } from "./Product";
 
-@Injectable()
+@Injectable({
+  providedIn: "root",
+})
 export class ProductService {
   getProducts(): IProduct[] {
     return [
