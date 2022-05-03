@@ -9,11 +9,21 @@ import { IProduct } from "./Product";
 })
 export class ProductListComponent implements OnInit {
   pageTitle: string = "Product List";
-  listFilter: string = "cart";
 
   imageWidth: number = 50;
   imageMargin: number = 2;
   showImage: boolean = false;
+
+  private _listFilter: string = "";
+
+  get listFilter(): string {
+    return this._listFilter;
+  }
+
+  set listFilter(value: string) {
+    this._listFilter = value;
+    console.log("In set listFilter", value);
+  }
 
   products: IProduct[] = [
     {
@@ -43,6 +53,6 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("In OnInit");
+    this._listFilter = "cart";
   }
 }
